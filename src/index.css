@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-100 text-ink font-body;
+  min-height: 100vh;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 35%, #dbeafe 100%);
+}
+
+.card {
+  @apply rounded-2xl bg-white shadow-card p-6;
+}
+
+.input {
+  @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/40;
+}
+
+.button {
+  @apply rounded-full px-5 py-3 text-sm font-semibold transition;
+}
+
+.button-primary {
+  @apply button bg-gradient-to-r from-brand to-emerald-500 text-ink;
+}
+
+.button-outline {
+  @apply button border border-slate-300 text-ink;
+}
+
+.badge {
+  @apply rounded-full px-3 py-1 text-xs font-semibold;
+}
+
+.badge-info {
+  @apply badge bg-blue-100 text-blue-700;
+}
+
+.badge-warn {
+  @apply badge bg-amber-100 text-amber-700;
+}
+
+.badge-success {
+  @apply badge bg-emerald-100 text-emerald-700;
+}
+
+.badge-danger {
+  @apply badge bg-red-100 text-red-700;
+}
