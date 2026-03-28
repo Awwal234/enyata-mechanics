@@ -15,6 +15,20 @@ Unplanned outages and manual top-ups are costly. This product makes prepaid elec
 - Transaction history and receipts
 - Admin/QA tools for meter validation and IoT credit updates
 
+## Backend Github Link
+
+```
+https://github.com/Oluwaseyi-vibex/mechanics-backend
+
+```
+
+## Backend Render Link
+
+```
+https://mechanics-backend-ymvp.onrender.com
+
+```
+
 ## Screens
 
 - Landing
