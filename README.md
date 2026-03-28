@@ -52,6 +52,7 @@ npm run dev
 
 No frontend API environment variable is required.
 Local development proxies `/api/*` requests to `http://localhost:5000/api/*`.
+Netlify production should set `BACKEND_BASE_URL` to the backend origin, for example `https://your-backend.example.com/api`.
 
 ## API endpoints used (frontend)
 

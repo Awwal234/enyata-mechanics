@@ -4,6 +4,6 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://mechanics-backend-ymvp.onrender.com/api/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
   force = true
