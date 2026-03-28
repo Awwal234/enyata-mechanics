@@ -78,7 +78,7 @@ export default function Layout({ title, children, action }) {
           <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-muted">
-                Energy Wallet
+                Power as you go
               </p>
               <h1 className="font-display text-2xl font-semibold text-ink">
                 {title}
