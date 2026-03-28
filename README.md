@@ -22,13 +22,6 @@ https://github.com/Oluwaseyi-vibex/mechanics-backend
 
 ```
 
-## Backend Render Link
-
-```
-https://mechanics-backend-ymvp.onrender.com
-
-```
-
 ## Screens
 
 - Landing
@@ -57,11 +50,9 @@ npm run dev
 
 ## Environment
 
-Create a `.env` file from `.env.example`.
-
-```
-VITE_API_BASE=http://localhost:5000
-```
+No frontend API environment variable is required.
+Local development proxies `/api/*` requests to `http://localhost:5000/api/*`.
+Netlify production should set `BACKEND_BASE_URL` to the backend origin, for example `https://your-backend.example.com/api`.
 
 ## API endpoints used (frontend)
 
