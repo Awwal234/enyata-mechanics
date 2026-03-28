@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import landingIllustration from "../assets/landing-illustration.svg";
 
@@ -57,31 +57,69 @@ const steps = [
 ];
 
 export default function Landing() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <div className="min-h-screen bg-slate-50 text-ink">
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-sm font-semibold text-white">
-            PW
+      <header className="mx-auto w-full max-w-6xl px-6 py-6">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-3">
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-ink text-sm font-semibold text-white">
+              PW
+            </div>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-semibold">Power as you go</p>
+              <p className="truncate text-xs text-muted">Payments for prepaid power</p>
+            </div>
           </div>
-          <div>
-            <p className="text-sm font-semibold">Power as you go</p>
-            <p className="text-xs text-muted">Payments for prepaid power</p>
+          <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
+            <span>Product</span>
+            <span>Security</span>
+            <span>Pricing</span>
+          </nav>
+          <div className="hidden items-center gap-3 md:flex">
+            <Link className="text-sm font-semibold text-muted" to="/login">
+              Sign in
+            </Link>
+            <Link className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white" to="/register">
+              Get started
+            </Link>
           </div>
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-ink transition hover:border-slate-300 md:hidden"
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
         </div>
-        <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
-          <span>Product</span>
-          <span>Security</span>
-          <span>Pricing</span>
-        </nav>
-        <div className="flex items-center gap-3">
-          <Link className="text-sm font-semibold text-muted" to="/login">
-            Sign in
-          </Link>
-          <Link className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white" to="/register">
-            Get started
-          </Link>
-        </div>
+        {isMenuOpen ? (
+          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_20px_40px_rgba(15,23,42,0.08)] md:hidden">
+            <nav className="flex flex-col gap-4 text-sm font-medium text-muted">
+              <span>Product</span>
+              <span>Security</span>
+              <span>Pricing</span>
+            </nav>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <Link className="rounded-full border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-muted" to="/login" onClick={closeMenu}>
+                Sign in
+              </Link>
+              <Link className="rounded-full bg-ink px-4 py-3 text-center text-sm font-semibold text-white" to="/register" onClick={closeMenu}>
+                Get started
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </header>
 
       <main>
