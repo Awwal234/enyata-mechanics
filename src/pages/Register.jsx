@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { toast } from "react-toastify";
 import { api } from "../lib/api";
 import { useAuthStore } from "../store/auth";
@@ -10,6 +11,7 @@ import authIllustration from "../assets/auth-illustration.svg";
 export default function Register() {
   const navigate = useNavigate();
   const setAuth = useAuthStore((state) => state.setAuth);
+  const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit, formState } = useForm({
     defaultValues: {
       businessName: "",
@@ -96,7 +98,22 @@ export default function Register() {
             </div>
             <div className="md:col-span-2">
               <label className="text-sm font-semibold">Password</label>
-              <input className="input mt-2" type="password" {...register("password", { required: true })} />
+              <div className="relative mt-2">
+                <input
+                  className="input pr-16"
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", { required: true })}
+                />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-3 grid place-items-center text-brand"
+                  onClick={() => setShowPassword((current) => !current)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  aria-pressed={showPassword}
+                >
+                  {showPassword ? <FiEyeOff className="h-4 w-4" /> : <FiEye className="h-4 w-4" />}
+                </button>
+              </div>
             </div>
             <div>
               <label className="text-sm font-semibold">Meter number</label>
