@@ -46,7 +46,7 @@ npm run dev
 Create a `.env` file from `.env.example`.
 
 ```
-VITE_API_BASE=http://localhost:4000
+VITE_API_BASE=http://localhost:5000
 ```
 
 ## API endpoints used (frontend)
