@@ -55,14 +55,6 @@ npm install
 npm run dev
 ```
 
-## Environment
-
-Create a `.env` file from `.env.example`.
-
-```
-VITE_API_BASE=http://localhost:5000
-```
-
 ## API endpoints used (frontend)
 
 - `POST /api/auth/login`
