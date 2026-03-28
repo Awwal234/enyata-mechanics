@@ -22,13 +22,6 @@ https://github.com/Oluwaseyi-vibex/mechanics-backend
 
 ```
 
-## Backend Render Link
-
-```
-https://mechanics-backend-ymvp.onrender.com
-
-```
-
 ## Screens
 
 - Landing
@@ -53,6 +46,14 @@ https://mechanics-backend-ymvp.onrender.com
 ```bash
 npm install
 npm run dev
+```
+
+## Environment
+
+Create a `.env` file with your backend base URL.
+
+```bash
+VITE_API_BASE=https://your-api-host.example.com
 ```
 
 ## API endpoints used (frontend)
