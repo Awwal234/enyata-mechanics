@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/auth": "http://localhost:5000/api",
-      "/meters": "http://localhost:5000/api",
-      "/payments": "http://localhost:5000/api",
-      "/iot": "http://localhost:5000/api",
+      "/api": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
     },
   },
 });

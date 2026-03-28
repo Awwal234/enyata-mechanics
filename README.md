@@ -50,11 +50,8 @@ npm run dev
 
 ## Environment
 
-Create a `.env` file with your backend base URL.
-
-```bash
-VITE_API_BASE=https://your-api-host.example.com
-```
+No frontend API environment variable is required.
+Local development proxies `/api/*` requests to `http://localhost:5000/api/*`.
 
 ## API endpoints used (frontend)
 
